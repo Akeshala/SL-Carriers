@@ -165,7 +165,7 @@ if (isset($_GET['logout'])) {
             <li class="active">
               <a class="" href="form_validation_new.php">
                 <i class='icon_shield_alt'></i>
-                <span>Security Settings</span>
+                <span>Account Settings</span>
               </a>
             </li>
             <li class="active">
@@ -218,7 +218,7 @@ if (isset($_GET['logout'])) {
                       <div class="form-group">
                         <div class="col-lg-offset-2 col-lg-10">
                           <button class="btn btn-primary" type="submit">Save</button>
-                          <button class="btn btn-default" type="button">Cancel</button>
+                          
                         </div>
                       </div>
                     </form>
@@ -231,7 +231,7 @@ if (isset($_GET['logout'])) {
             <div class="col-lg-12">
               <section class="panel">
                 <header class="panel-heading">
-                  Change Your Password/Email/Username
+                  Change Your Email
                 </header>
                 <div class="panel-body">
                   <div class="form">
@@ -243,27 +243,26 @@ if (isset($_GET['logout'])) {
                         </div>
                       </div>
                       <div class="form-group ">
+                        <label for="agree" class="control-label col-lg-2 col-sm-3">Agree to Our Policy <span class="required">*</span></label>
+                        <div class="col-lg-10 col-sm-9">
+                          <input type="checkbox" style="width: 20px" class="checkbox form-control" id="agree" name="agree" />
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                          <button class="btn btn-primary" type="submit">Save</button>
+                          
+                        </div>
+                      </div>
+                </div>      
+                    <header class="panel-heading">
+                  Change Your Username
+                    </header>
+                <div class = "panel-body">
+                      <div class="form-group ">
                         <label for="username" class="control-label col-lg-2">Username <span class="required">*</span></label>
                         <div class="col-lg-10">
                           <input class="form-control " id="username" name="username" type="text" />
-                        </div>
-                      </div>
-                      <div class="form-group ">
-                        <label for="password" class="control-label col-lg-2">Password <span class="required">*</span></label>
-                        <div class="col-lg-10">
-                          <input class="form-control " id="password" name="password" type="password" />
-                        </div>
-                      </div>
-                      <div class="form-group ">
-                        <label for="confirm_password" class="control-label col-lg-2">Confirm Password <span class="required">*</span></label>
-                        <div class="col-lg-10">
-                          <input class="form-control " id="confirm_password" name="confirm_password" type="password" />
-                        </div>
-                      </div>
-                      <div class="form-group ">
-                        <label for="email" class="control-label col-lg-2">Email <span class="required">*</span></label>
-                        <div class="col-lg-10">
-                          <input class="form-control " id="email" name="email" type="email" />
                         </div>
                       </div>
                       <div class="form-group ">
@@ -275,12 +274,46 @@ if (isset($_GET['logout'])) {
                       <div class="form-group">
                         <div class="col-lg-offset-2 col-lg-10">
                           <button class="btn btn-primary" type="submit">Save</button>
-                          <button class="btn btn-default" type="button">Cancel</button>
+                          
                         </div>
                       </div>
+                </div>
+                    <header class= "panel-heading">
+                    Change Your Password
+                    </header>
+                <div class = "panel-body">
+                      <div class="form-group ">
+                        <label for="password" class="control-label col-lg-2">Password <span class="required">*</span></label>
+                        <div class="col-lg-10">
+                          <input class="form-control " id="password" name="password" type="password" />
+                        </div>
+                      </div>
+                
+                      <div class="form-group ">
+                        <label for="confirm_password" class="control-label col-lg-2">Confirm Password <span class="required">*</span></label>
+                        <div class="col-lg-10">
+                          <input class="form-control " id="confirm_password" name="confirm_password" type="password" />
+                        </div>
+                      </div>
+                      <div class="form-group ">
+                        <label for="agree" class="control-label col-lg-2 col-sm-3">Agree to Our Policy <span class="required">*</span></label>
+                        <div class="col-lg-10 col-sm-9">
+                          <input type="checkbox" style="width: 20px" class="checkbox form-control" id="agree" name="agree" />
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                          <button class="btn btn-primary" type="submit">Save</button>
+                          
+                        </div>
+                      </div>
+                    
+                </div>      
+
+                      
                     </form>
                   </div>
-                </div>
+                
               </section>
             </div>
           </div>
