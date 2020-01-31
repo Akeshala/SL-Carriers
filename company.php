@@ -9,7 +9,7 @@
   <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
   <link rel="shortcut icon" href="img/favicon.png">
 
-  <title>Profile - Name of the person </title>
+  <title>Profile - Name of the company </title>
 
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -23,19 +23,6 @@
   <link href="css/style.css" rel="stylesheet">
   <link href="css/style-responsive.css" rel="stylesheet" />
 
-  <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
-  <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-      <script src="js/lte-ie7.js"></script>
-    <![endif]-->
-
-  <!-- =======================================================
-      Theme Name: NiceAdmin
-      Theme URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-      Author: BootstrapMade
-      Author URL: https://bootstrapmade.com
-    ======================================================= -->
 </head>
 
 <body>
@@ -151,7 +138,7 @@
       <section class="wrapper">
         <div class="row">
           <div class="col-lg-12">
-            <h3 class="page-header"><i class="fa fa-user-md"></i> Profile</h3>
+            <h3 class="page-header"><i class="fa fa-user-md"></i> Comapany </h3>
           </div>
         </div>
         <div class="row">
@@ -192,7 +179,7 @@
           <form method="POST" name="search" action="company.php">
             <div id="demo-grid">
               <div class="search-box">
-                <select id="Place" name="field[]" multiple="multiple">
+                <select id="Place" name="field[]">
                   <option value="0" selected="selected">Select Field</option>
                   <?php
                   if (!empty($countryResult)) {
