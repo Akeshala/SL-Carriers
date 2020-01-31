@@ -330,7 +330,7 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
             <ul class="sub">
-              <li><a class="" href="form_component.html">Student Form</a></li>
+              <li><a class="" href="form_component.html">Form Elements</a></li>
               <li><a class="" href="form_validation.html">Form Validation</a></li>
             </ul>
           </li>
@@ -398,11 +398,11 @@
       <section class="wrapper">
         <div class="row">
           <div class="col-lg-12">
-            <h3 class="page-header"><i class="fa fa-file-text-o"></i> Student Form</h3>
+            <h3 class="page-header"><i class="fa fa-file-text-o"></i> Form elements</h3>
             <ol class="breadcrumb">
               <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
               <li><i class="icon_document_alt"></i>Forms</li>
-              <li><i class="fa fa-file-text-o"></i>Student Form</li>
+              <li><i class="fa fa-file-text-o"></i>Form elements</li>
             </ol>
           </div>
         </div>
@@ -410,79 +410,36 @@
           <div class="col-lg-12">
             <section class="panel">
               <header class="panel-heading">
-                Student Form
+                Form Elements
               </header>
               <div class="panel-body">
                 <form class="form-horizontal " method="get">
                   <div class="form-group">
-                    <label class="col-sm-2 control-label">Full Name</label>
+                    <label class="col-sm-2 control-label">Default</label>
                     <div class="col-sm-10">
-                      <input id="fullname" type="text" class="form-control">
+                      <input type="text" class="form-control">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-2 control-label">Home address</label>
+                    <label class="col-sm-2 control-label">Help text</label>
                     <div class="col-sm-10">
-                      <input class="form-control input-lg m-bot15" id="apartmentno" type="text" placeholder="Apartment Number">
-                      <input class="form-control input-lg m-bot15" id="street" type="text" placeholder="Street Name">
-                      <input class="form-control input-lg m-bot15" id="city" type="text" placeholder="City Name">
-                      <input class="form-control input-lg m-bot15" id="post" type="text" placeholder="Postal Code">
-      
-                   <!-- <div class="col-lg-10">
-                      <div class="row">
-                        <div class="col-lg-3">
-                          <input type="text" class="form-control" placeholder=".col-lg-2">
-                        </div>
-                        <div class="col-lg-3">
-                          <input type="text" class="form-control" placeholder=".col-lg-3">
-                        </div>
-                        <div class="col-lg-3">
-                          <input type="text" class="form-control" placeholder=".col-lg-4">-->
-                        
-                 <!--<span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>-->     
-                    </div>
-                    </div>
-                    <div class="form-group">
-                    <label class="control-label col-lg-2" for="gender">Gender</label>
-                    <div class="col-lg-10">
-                      <select class="form-control m-bot15">
-                                              <option>Male</option>
-                                              <option>Female</option>
-                                              <option>Other</option>
-                                            
-                                          </select>
-
-                      <!--<select multiple class="form-control">
-                                              <option>1</option>
-                                              <option>2</option>
-                                              <option>3</option>
-                                              <option>4</option>
-                                              <option>5</option>
-                                          </select>-->
-                    </div>
-                  </div>
-                    <div class="form-group">
-                    <label class="col-sm-2 control-label">Phone</label>
-                    <div class="col-sm-10">
-                      <input class="form-control" id = "phone" type="number" value = "Type your phone number" >
+                      <input type="text" class="form-control">
+                      <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-2 control-label">Positions you are applying for *</label>
+                    <label class="col-sm-2 control-label">Rounder</label>
                     <div class="col-sm-10">
-                      <input class="form-control input-lg m-bot15" id="post1"  type="text" placeholder="Position 1">
-                      <input class="form-control input-lg m-bot15" id="post2" type="text" placeholder="Position 2">
-                      <input class="form-control input-lg m-bot15" id="post3" type="text" placeholder="Position 3">
-                      <input class="form-control input-lg m-bot15" id="post4" type="text" placeholder="Position 4">
+                      <input type="text" class="form-control round-input">
+                    </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-2 control-label">Salary Requirement</label>
+                    <label class="col-sm-2 control-label">Input focus</label>
                     <div class="col-sm-10">
-                      <input class="form-control" id="salary" type="number" value="Type a number">
+                      <input class="form-control" id="focusedInput" type="text" value="This is focused...">
                     </div>
-                  
                   </div>
-                  <!--<div class="form-group">
+                  <div class="form-group">
                     <label class="col-sm-2 control-label">Disabled</label>
                     <div class="col-sm-10">
                       <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
@@ -559,7 +516,7 @@
                                               <option>Option 3</option>
                                           </select>
                     </div>
-                  </div>-->
+                  </div>
                 </form>
               </div>
             </section>
@@ -567,54 +524,22 @@
               <div class="panel-body">
                 <form class="form-horizontal " method="get">
                   <div class="form-group">
-                    <label class="control-label col-lg-2" for="WorkExp">Work Experience</label>
+                    <label class="control-label col-lg-2" for="inputSuccess">Checkboxes and radios</label>
                     <div class="col-lg-10">
                       <div class="checkbox">
                         <label>
                                                   <input type="checkbox" value="">
-                                                  Less than a year / Newbie
+                                                  Option one is this and that&mdash;be sure to include why it's great
                                               </label>
                       </div>
 
                       <div class="checkbox">
                         <label>
                                                   <input type="checkbox" value="">
-                                                  1&mdash;3 years
+                                                  Option one is this and that&mdash;be sure to include why it's great option one
                                               </label>
                       </div>
 
-                      <div class="checkbox">
-                        <label>
-                                                  <input type="checkbox" value="">
-                                                  More than 3 years
-                                              </label>
-                      </div>
-
- </div>
-
-                </form>
-              </div>
-            </section>
-          </div>
-        </div>
-        <!-- Basic Forms & Horizontal Forms-->
-
-       <!-- <div class="row">
-          <div class="col-lg-6">
-            <section class="panel">                     
- <div class="form-group">
-                    <div class="col-lg-offset-2 col-lg-10">
-                      <div class="checkbox">
-                        <label>
-                                                  <input type="checkbox"> I agree that above details are true
-                                              </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-lg-offset-2 col-lg-10">
-                      <button type="submit" class="btn btn-danger">Submit</button>
-                    </div>
                       <div class="radio">
                         <label>
                                                   <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
@@ -643,18 +568,58 @@
                                               <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
                                           </label>
 
-                    </div>-->
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-lg-2" for="inputSuccess">Selects</label>
+                    <div class="col-lg-10">
+                      <select class="form-control m-bot15">
+                                              <option>1</option>
+                                              <option>2</option>
+                                              <option>3</option>
+                                              <option>4</option>
+                                              <option>5</option>
+                                          </select>
 
+                      <select multiple class="form-control">
+                                              <option>1</option>
+                                              <option>2</option>
+                                              <option>3</option>
+                                              <option>4</option>
+                                              <option>5</option>
+                                          </select>
+                    </div>
                   </div>
 
-              
+                  <div class="form-group">
+                    <label class="control-label col-lg-2" for="inputSuccess">Column sizing</label>
+                    <div class="col-lg-10">
+                      <div class="row">
+                        <div class="col-lg-2">
+                          <input type="text" class="form-control" placeholder=".col-lg-2">
+                        </div>
+                        <div class="col-lg-3">
+                          <input type="text" class="form-control" placeholder=".col-lg-3">
+                        </div>
+                        <div class="col-lg-4">
+                          <input type="text" class="form-control" placeholder=".col-lg-4">
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </form>
+              </div>
             </section>
           </div>
-        
+        </div>
+        <!-- Basic Forms & Horizontal Forms-->
 
-        <!-- Basic Forms & Horizontal Forms
-
-        
+        <div class="row">
+          <div class="col-lg-6">
+            <section class="panel">
+              <header class="panel-heading">
                 Basic Forms
               </header>
               <div class="panel-body">
@@ -667,7 +632,20 @@
                     <label for="exampleInputPassword1">Password</label>
                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                   </div>
-                  
+                  <div class="form-group">
+                    <label for="exampleInputFile">File input</label>
+                    <input type="file" id="exampleInputFile">
+                    <p class="help-block">Example block-level help text here.</p>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                                          <input type="checkbox"> Check me out
+                                      </label>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+              </div>
             </section>
           </div>
           <div class="col-lg-6">
@@ -823,12 +801,16 @@
                         </form>
 
                       </div>
+
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
           </div>
         </div>
-         Inline form-->
-      <!--  <div class="row">
+        <!-- Inline form-->
+        <div class="row">
           <div class="col-lg-12">
             <section class="panel">
               <header class="panel-heading">
@@ -869,7 +851,7 @@
                   </header>
                   <div class="panel-body">
                     <form class="form-horizontal " action="#">
-                      date picker start
+                      <!--date picker start-->
 
                       <div class="form-group">
                         <label class="control-label col-sm-4">Default Datepicker</label>
@@ -897,11 +879,11 @@
                           </div>
                         </div>
                       </div>
-                      date picker end
+                      <!--date picker end-->
 
-                      color picker start
+                      <!--color picker start-->
                       <div class="form-group">
-                        <label class="control-label col-sm-4">full Name</label>
+                        <label class="control-label col-sm-4">Default</label>
 
                         <div class="col-sm-5">
                           <input type="text" value="#CCCCCC" class="cp1 form-control">
@@ -915,7 +897,7 @@
                         </div>
                       </div>
 
-                      color picker end
+                      <!--color picker end-->
 
                     </form>
 
@@ -1004,19 +986,19 @@
               </div>
             </div>
 
-            <div class="row">-->
+            <div class="row">
               <!-- Bootsrep Editor -->
               <div class="col-lg-12">
                 <section class="panel">
                   <header class="panel-heading">
-                    Write Something About You
+                    Bootsrep Editor
                   </header>
                   <div class="panel-body">
                     <div id="editor" class="btn-toolbar" data-role="editor-toolbar" data-target="#editor"></div>
                   </div>
                 </section>
               </div>
-              <!-- CKEditor 
+              <!-- CKEditor -->
               <div class="col-lg-12">
                 <section class="panel">
                   <header class="panel-heading">
@@ -1029,26 +1011,7 @@
                           <label class="control-label col-sm-2">CKEditor</label>
                           <div class="col-sm-10">
                             <textarea class="form-control ckeditor" name="editor1" rows="6"></textarea>
-                          </div>-->
-    
-        <!-- Basic Forms & Horizontal Forms-->
-
-        <div class="row">
-          <div class="col-lg-6">
-            <section class="panel">                     
- <div class="form-group">
-                    <div class="col-lg-offset-2 col-lg-10">
-                      <div class="checkbox">
-                        <label>
-                        <input type="checkbox"> I agree that above details are true
-                      </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-lg-offset-2 col-lg-10">
-                      <button type="submit" class="btn btn-danger">Submit</button>
-                    </div>
+                          </div>
                         </div>
                       </form>
                     </div>
@@ -1070,9 +1033,8 @@
             Licensing information: https://bootstrapmade.com/license/
             Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
           -->
-          Designed by <a href="https://www.facebook.com/nipundewthilina">BootstrapMade</a>
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
         </div>
-    
     </div>
   </section>
   <!-- container section end -->

@@ -1,3 +1,17 @@
+<?php include('server.php') ?>
+<?php
+
+if (!isset($_SESSION['email'])) {
+    $_SESSION['msg'] = "You must log in first";
+    header('location: login.php');
+}
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['email']);
+    header("location: login.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +23,7 @@
   <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
   <link rel="shortcut icon" href="img/favicon.png">
 
-  <title>Form Component | Creative - Bootstrap 3 Responsive Admin Template</title>
+  <title>Form Component</title>
 
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -22,80 +36,36 @@
   <link href="css/daterangepicker.css" rel="stylesheet" />
   <link href="css/bootstrap-datepicker.css" rel="stylesheet" />
   <link href="css/bootstrap-colorpicker.css" rel="stylesheet" />
-  <!-- date picker -->
-
-  <!-- color picker -->
-
-  <!-- Custom styles -->
   <link href="css/style.css" rel="stylesheet">
   <link href="css/style-responsive.css" rel="stylesheet" />
 
-  <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
-  <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-      <script src="js/lte-ie7.js"></script>
-    <![endif]-->
-
-    <!-- =======================================================
-      Theme Name: NiceAdmin
-      Theme URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-      Author: BootstrapMade
-      Author URL: https://bootstrapmade.com
-    ======================================================= -->
 </head>
 
 <body>
+  <form class="form-horizontal " method="post" action="form_component.php">
+    <!-- container section start -->
+    <section id="container" class="">
+      <!--header start-->
+      <header class="header dark-bg">
+        <div class="toggle-nav">
+          <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
+        </div>
+  
+        <!--logo start-->
+        <a href="index.php" class="logo">SL<span class="lite">Careers</span></a>
+        <!--logo end-->
 
-  <!-- container section start -->
-  <section id="container" class="">
-    <!--header start-->
-    <header class="header dark-bg">
-      <div class="toggle-nav">
-        <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
-      </div>
 
-      <!--logo start-->
-      <a href="index.html" class="logo">SL<span class="lite">Careers</span></a>
-      <!--logo end-->
+        <div class="top-nav notification-row">
+          <!-- notificatoin dropdown start-->
+          <ul class="nav pull-right top-menu">
 
-      <div class="nav search-row" id="top_menu">
-        <!--  search form start -->
-        <ul class="nav top-menu">
-          <li>
-            <form class="navbar-form">
-              <input class="form-control" placeholder="Search" type="text">
-            </form>
-          </li>
-        </ul>
-        <!--  search form end -->
-      </div>
-
-      <div class="top-nav notification-row">
-        <!-- notificatoin dropdown start-->
-        <ul class="nav pull-right top-menu">
-
-          <!-- task notificatoin start -->
-          <li id="task_notificatoin_bar" class="dropdown">
+            <!-- inbox notificatoin start-->
+            <li id="mail_notificatoin_bar" class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <i class="icon-task-l"></i>
-                            <span class="badge bg-important">5</span>
-                        </a>
-            <ul class="dropdown-menu extended tasks-bar">
-              <div class="notify-arrow notify-arrow-blue"></div>
-              <li>
-                <p class="blue">You have 5 pending tasks</p>
-              </li>
-             
-            </ul>
-          </li>
-          <!-- task notificatoin end -->
-          <!-- inbox notificatoin start-->
-          <li id="mail_notificatoin_bar" class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <i class="icon-envelope-l"></i>
-                            <span class="badge bg-important">5</span>
-                        </a>
+              <i class="icon-envelope-l"></i>
+              <span class="badge bg-important">5</span>
+            </a>
             <ul class="dropdown-menu extended inbox">
               <div class="notify-arrow notify-arrow-blue"></div>
               <li>
@@ -111,7 +81,7 @@
                                     <span class="message">
                                         I really like this admin panel.
                                     </span>
-                                </a>
+                </a>
               </li>
               <li>
                 <a href="#">
@@ -123,7 +93,7 @@
                                     <span class="message">
                                      Hi, What is next project plan?
                                     </span>
-                                </a>
+                </a>
               </li>
               <li>
                 <a href="#">
@@ -153,827 +123,234 @@
                 <a href="#">See all messages</a>
               </li>
             </ul>
-          </li>
-          <!-- inbox notificatoin end -->
-          <!-- alert notification start-->
-          <li id="alert_notificatoin_bar" class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-
-                            <i class="icon-bell-l"></i>
-                            <span class="badge bg-important">7</span>
-                        </a>
-            <ul class="dropdown-menu extended notification">
-              <div class="notify-arrow notify-arrow-blue"></div>
-              <li>
-                <p class="blue">You have 4 new notifications</p>
-              </li>
-              <li>
-                <a href="#">
-                                    <span class="label label-primary"><i class="icon_profile"></i></span>
-                                    Friend Request
-                                    <span class="small italic pull-right">5 mins</span>
-                                </a>
-              </li>
-              <li>
-                <a href="#">
-                                    <span class="label label-warning"><i class="icon_pin"></i></span>
-                                    John location.
-                                    <span class="small italic pull-right">50 mins</span>
-                                </a>
-              </li>
-              <li>
-                <a href="#">
-                                    <span class="label label-danger"><i class="icon_book_alt"></i></span>
-                                    Project 3 Completed.
-                                    <span class="small italic pull-right">1 hr</span>
-                                </a>
-              </li>
-              <li>
-                <a href="#">
-                                    <span class="label label-success"><i class="icon_like"></i></span>
-                                    Mick appreciated your work.
-                                    <span class="small italic pull-right"> Today</span>
-                                </a>
-              </li>
-              <li>
-                <a href="#">See all notifications</a>
-              </li>
-            </ul>
-          </li>
-          <!-- alert notification end-->
-          <!-- user login dropdown start-->
-          <li class="dropdown">
+            </li>
+            <!-- inbox notificatoin end -->
+            <!-- user login dropdown start-->
+            <?php if (isset($_SESSION['email'])) : ?>
+            <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
                                 <img alt="" src="img/avatar1_small.jpg">
                             </span>
-                            <span class="username">Jenifer Smith</span>
+                            <span class="username"><?php echo $_SESSION['username']; ?></span>
                             <b class="caret"></b>
-                        </a>
+            </a>
             <ul class="dropdown-menu extended logout">
               <div class="log-arrow-up"></div>
-              <li class="eborder-top">
-                <a href="#"><i class="icon_profile"></i> My Profile</a>
-              </li>
               <li>
-                <a href="#"><i class="icon_mail_alt"></i> My Inbox</a>
+              <a href="index.php?logout='1'"><i class="icon_key_alt"></i> Log Out</a>
               </li>
-              <li>
-                <a href="#"><i class="icon_clock_alt"></i> Timeline</a>
-              </li>
-              <li>
-                <a href="#"><i class="icon_chat_alt"></i> Chats</a>
-              </li>
-              <li>
-                <a href="login.html"><i class="icon_key_alt"></i> Log Out</a>
-              </li>
-              <li>
-                <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
-              </li>
-              <li>
-                <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
-              </li>
+              
             </ul>
-          </li>
+            </li>
+            <?php endif ?>
           <!-- user login dropdown end -->
-        </ul>
-        <!-- notificatoin dropdown end-->
-      </div>
-    </header>
+          </ul>
+          <!-- notificatoin dropdown end-->
+        </div>
+      </header>
     <!--header end-->
 
-    <!--sidebar start-->
+    <!--sidebar start..........................................-->
     <aside>
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
           <li class="active">
-            <a class="" href="index.html">
+            <a class="" href="index.php">
                           <i class="icon_house_alt"></i>
-                          <span>Dashboard</span>
+                          <span>Home</span>
                       </a>
           </li>
-          <li class="sub-menu">
-            <a href="javascript:;" class="">
+          <li class="active">
+            <a class="" href="form_component.php">
                           <i class="icon_document_alt"></i>
                           <span>Edit My Profile</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
-            <ul class="sub">
-              <li><a class="" href="form_component.html">Student Form</a></li>
-              <li><a class="" href="form_validation.html">Form Validation</a></li>
-            </ul>
           </li>
-        
-          
-         
-
-          
-
-          <li class="sub-menu">
-            <a href="javascript:;" class="">
-                          <i class="icon_documents_alt"></i>
-                          <span>Pages</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-            <ul class="sub">
-              <li><a class="" href="profile.html">Profile</a></li>
-              <li><a class="" href="login.html"><span>Login Page</span></a></li>
-              <li><a class="" href="contact.html"><span>Contact Page</span></a></li>
-              <li><a class="" href="blank.html">Blank Page</a></li>
-              <li><a class="" href="404.html">404 Error</a></li>
-            </ul>
+          <li class="active">
+            <a class="" href="form_validation_new.html">
+              <i class='icon_shield_alt'></i>
+                <span>Security Settings</span>
+            </a>
           </li>
-
+          <li class="active">
+          <a class="" href="form_validation_new.html">
+            <i class='icon_camera_alt'></i>
+            <span>Upload My Image</span>
+          </a>
+          </li>
         </ul>
-        <!-- sidebar menu end-->
       </div>
     </aside>
-    <!--sidebar end-->
-
+    <!--sidebar end..........................................-->
+    
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
         <div class="row">
           <div class="col-lg-12">
-            <h3 class="page-header"><i class="fa fa-file-text-o"></i> Student Form</h3>
-            <ol class="breadcrumb">
-              <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
-              <li><i class="icon_document_alt"></i>Forms</li>
-              <li><i class="fa fa-file-text-o"></i>Student Form</li>
-            </ol>
+            <h3 class="page-header"><i class="fa fa-file-text-o"></i><strong>Edit My Profile</strong></h3>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-12">
             <section class="panel">
               <header class="panel-heading">
-                Student Form
+                 Form
+                 
+                                                                  
+                                        <select name="username1" id="username1">
+                                            <!--<option>Select</option>-->
+                                            <option value="C"><?php echo $_SESSION['username']; ?></option>
+                                        </select>                                    
+                                
+                         
               </header>
+              <!------Student Form start........................................................-->
               <div class="panel-body">
-                <form class="form-horizontal " method="get">
+                  <!----Full name.................................................-->
                   <div class="form-group">
                     <label class="col-sm-2 control-label">Full Name</label>
+                    
                     <div class="col-sm-10">
-                      <input name="fullname" type="text" class="form-control">
+                      <input name="fullname" type="text" class="form-control input-lg m-bot15" placeholder="Enter Your Full Name">
                     </div>
                   </div>
+                  <!--Address..................................................-->
                   <div class="form-group">
                     <label class="col-sm-2 control-label">Home address</label>
                     <div class="col-sm-10">
-                      <input class="form-control input-lg m-bot15" name="apartmentno" type="text" placeholder="Apartment Number">
-                      <input class="form-control input-lg m-bot15" name="street" type="text" placeholder="Street Name">
-                      <input class="form-control input-lg m-bot15" name="city" type="text" placeholder="City Name">
-                      <input class="form-control input-lg m-bot15" name="post" type="text" placeholder="Postal Code">
-      
-                   <!-- <div class="col-lg-10">
-                      <div class="row">
-                        <div class="col-lg-3">
-                          <input type="text" class="form-control" placeholder=".col-lg-2">
-                        </div>
-                        <div class="col-lg-3">
-                          <input type="text" class="form-control" placeholder=".col-lg-3">
-                        </div>
-                        <div class="col-lg-3">
-                          <input type="text" class="form-control" placeholder=".col-lg-4">-->
-                        
-                 <!--<span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>-->     
+                      <input class="form-control input-lg m-bot15" name="apartmentnumber" type="text" placeholder="Apartment Number">
+                      <input class="form-control input-lg m-bot15" name="streetname" type="text" placeholder="Street Name">
+                      <input class="form-control input-lg m-bot15" name="cityname" type="text" placeholder="City Name">
+                      <input class="form-control input-lg m-bot15" name="postalcode" type="text" placeholder="Postal Code">
                     </div>
-                    </div>
-                    <div class="form-group">
+                  </div>
+                  <!--Gender.................................-->
+                  <div class="form-group">
                     <label class="control-label col-lg-2" for="gender">Gender</label>
                     <div class="col-lg-10">
-                      <select class="form-control m-bot15">
-                                              <option>Male</option>
-                                              <option>Female</option>
-                                              <option>Other</option>
-                                            
-                                          </select>
-
-                      <!--<select multiple class="form-control">
-                                              <option>1</option>
-                                              <option>2</option>
-                                              <option>3</option>
-                                              <option>4</option>
-                                              <option>5</option>
-                                          </select>-->
+                      <select class="form-control m-bot15" name="gender">
+                       <option>Male</option>
+                       <option>Female</option>
+                       <option>Other</option>                    
+                      </select>                    
                     </div>
                   </div>
-                    <div class="form-group">
+
+                  <!--telephone number.........-->
+                  <div class="form-group">
                     <label class="col-sm-2 control-label">Phone</label>
                     <div class="col-sm-10">
-                      <input class="form-control" name = "phone" type="number" value = "Type your phone number" >
+                      <input class="form-control input-lg m-bot15" name = "phone" type="tel" placeholder="Type Your Telephone Number" >
                     </div>
                   </div>
+                  <!--positions......................................-->
                   <div class="form-group">
-                    <label class="col-sm-2 control-label">Positions you are applying for *</label>
+                    <label class="col-sm-2 control-label">Positions you are applying for</label>
                     <div class="col-sm-10">
-                      <input class="form-control input-lg m-bot15" name="post1"  type="text" placeholder="Position 1">
-                      <input class="form-control input-lg m-bot15" name="post2" type="text" placeholder="Position 2">
-                      <input class="form-control input-lg m-bot15" name="post3" type="text" placeholder="Position 3">
-                      <input class="form-control input-lg m-bot15" name="post4" type="text" placeholder="Position 4">
+                      <input class="form-control input-lg m-bot15" name="position1"  type="text" placeholder="Position 1">
+                      <input class="form-control input-lg m-bot15" name="position2" type="text" placeholder="Position 2">
+                      <input class="form-control input-lg m-bot15" name="position3" type="text" placeholder="Position 3">
+                      <input class="form-control input-lg m-bot15" name="position4" type="text" placeholder="Position 4">
+                    </div>
                   </div>
+                  <!--Salary..............................................-->
                   <div class="form-group">
                     <label class="col-sm-2 control-label">Salary Requirement</label>
                     <div class="col-sm-10">
-                      <input class="form-control" name="salary" type="number" value="Type a number">
+                      <input class="form-control input-lg m-bot15" name="salary" type="number" placeholder="Type Expected Salary - Rs/=">
                     </div>
-                  
-                  </div>
-                  <!--<div class="form-group">
-                    <label class="col-sm-2 control-label">Disabled</label>
-                    <div class="col-sm-10">
-                      <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-sm-2 control-label">Placeholder</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" placeholder="placeholder">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-sm-2 control-label">Password</label>
-                    <div class="col-sm-10">
-                      <input type="password" class="form-control" placeholder="">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-lg-2 control-label">Static control</label>
-                    <div class="col-lg-10">
-                      <p class="form-control-static">email@example.com</p>
-                    </div>
-                  </div>
-                </form>
+                  </div>                            
               </div>
             </section>
             <section class="panel">
               <div class="panel-body">
-                <form class="form-horizontal " method="get">
-                  <div class="form-group has-success">
-                    <label class="control-label col-lg-2" for="inputSuccess">Input with success</label>
-                    <div class="col-lg-10">
-                      <input type="text" class="form-control" id="inputSuccess">
-                    </div>
-                  </div>
-                  <div class="form-group has-warning">
-                    <label class="control-label col-lg-2" for="inputWarning">Input with warning</label>
-                    <div class="col-lg-10">
-                      <input type="text" class="form-control" id="inputWarning">
-                    </div>
-                  </div>
-                  <div class="form-group has-error">
-                    <label class="control-label col-lg-2" for="inputError">Input with error</label>
-                    <div class="col-lg-10">
-                      <input type="text" class="form-control" id="inputError">
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </section>
-            <section class="panel">
-              <div class="panel-body">
-                <form class="form-horizontal " method="get">
-                  <div class="form-group">
-                    <label class="control-label col-lg-2" for="inputSuccess">Control sizing</label>
-                    <div class="col-lg-10">
-                      <input class="form-control input-lg m-bot15" type="text" placeholder=".input-lg">
-                      <input class="form-control m-bot15" type="text" placeholder="Default input">
-                      <input class="form-control input-sm m-bot15" type="text" placeholder=".input-sm">
-
-                      <select class="form-control input-lg m-bot15">
-                                              <option>Option 1</option>
-                                              <option>Option 2</option>
-                                              <option>Option 3</option>
-                                          </select>
-                      <select class="form-control m-bot15">
-                                              <option>Option 1</option>
-                                              <option>Option 2</option>
-                                              <option>Option 3</option>
-                                          </select>
-                      <select class="form-control input-sm m-bot15">
-                                              <option>Option 1</option>
-                                              <option>Option 2</option>
-                                              <option>Option 3</option>
-                                          </select>
-                    </div>
-                  </div>-->
-                </form>
-              </div>
-            </section>
-            <section class="panel">
-              <div class="panel-body">
-                <form class="form-horizontal " method="get">
+                <!--Experience.........................-->
                   <div class="form-group">
                     <label class="control-label col-lg-2" for="WorkExp">Work Experience</label>
                     <div class="col-lg-10">
                       <div class="checkbox">
                         <label>
-                                                  <input type="checkbox" value="">
-                                                  Less than a year / Newbie
-                                              </label>
+                          <input type="radio" value="Less than a year/Newbie" name="workexperience">
+                             Less than a year / Newbie
+                        </label>
                       </div>
 
                       <div class="checkbox">
                         <label>
-                                                  <input type="checkbox" value="">
-                                                  1&mdash;3 years
-                                              </label>
+                          <input type="radio" value="1-3 years" name="workexperience">
+                            1&mdash;3 years
+                        </label>
                       </div>
 
                       <div class="checkbox">
                         <label>
-                                                  <input type="checkbox" value="">
-                                                  More than 3 years
-                                              </label>
+                          <input type="radio" value="More than 3 years" name="workexperience">
+                              More than 3 years
+                        </label>
                       </div>
-
- </div>
-
-                </form>
+                    </div>
+                  </div>
+                <!--end of student form...........................-->
               </div>
             </section>
           </div>
         </div>
-        <!-- Basic Forms & Horizontal Forms-->
-
-       <!-- <div class="row">
-          <div class="col-lg-6">
-            <section class="panel">                     
- <div class="form-group">
-                    <div class="col-lg-offset-2 col-lg-10">
-                      <div class="checkbox">
-                        <label>
-                                                  <input type="checkbox"> I agree that above details are true
-                                              </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-lg-offset-2 col-lg-10">
-                      <button type="submit" class="btn btn-danger">Submit</button>
-                    </div>
-                      <div class="radio">
-                        <label>
-                                                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                                  Option one is this and that&mdash;be sure to include why it's great
-                                              </label>
-                      </div>
-                      <div class="radio">
-                        <label>
-                                                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                                                  Option two can be something else and selecting it will deselect option one
-                                              </label>
-                      </div>
-
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="control-label col-lg-2" for="inputSuccess">Inline checkboxes</label>
-                    <div class="col-lg-10">
-                      <label class="checkbox-inline">
-                                              <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
-                                          </label>
-                      <label class="checkbox-inline">
-                                              <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
-                                          </label>
-                      <label class="checkbox-inline">
-                                              <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
-                                          </label>
-
-                    </div>-->
-
-                  </div>
-
-              
-            </section>
-          </div>
-        
-
-        <!-- Basic Forms & Horizontal Forms
-
-        
-                Basic Forms
-              </header>
-              <div class="panel-body">
-                <form role="form">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                  </div>
-                  
-            </section>
-          </div>
-          <div class="col-lg-6">
-            <section class="panel">
-              <header class="panel-heading">
-                Horizontal Forms
-              </header>
-              <div class="panel-body">
-                <form class="form-horizontal" role="form">
-                  <div class="form-group">
-                    <label for="inputEmail1" class="col-lg-2 control-label">Email</label>
-                    <div class="col-lg-10">
-                      <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
-                      <p class="help-block">Example block-level help text here.</p>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputPassword1" class="col-lg-2 control-label">Password</label>
-                    <div class="col-lg-10">
-                      <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-lg-offset-2 col-lg-10">
-                      <div class="checkbox">
-                        <label>
-                                                  <input type="checkbox"> Remember me
-                                              </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-lg-offset-2 col-lg-10">
-                      <button type="submit" class="btn btn-danger">Sign in</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </section>
-            <section class="panel">
-
-              <div class="panel-body">
-                <a href="#myModal" data-toggle="modal" class="btn btn-primary">
-                                  Form in Modal
-                              </a>
-                <a href="#myModal-1" data-toggle="modal" class="btn  btn-warning">
-                                  Form in Modal 2
-                              </a>
-                <a href="#myModal-2" data-toggle="modal" class="btn  btn-danger">
-                                  Form in Modal 3
-                              </a>
-
-                <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                        <h4 class="modal-title">Form Tittle</h4>
-                      </div>
-                      <div class="modal-body">
-
-                        <form role="form">
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Enter email">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleInputFile">File input</label>
-                            <input type="file" id="exampleInputFile3">
-                            <p class="help-block">Example block-level help text here.</p>
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                                                          <input type="checkbox"> Check me out
-                                                      </label>
-                          </div>
-                          <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal-1" class="modal fade">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                        <h4 class="modal-title">Form Tittle</h4>
-                      </div>
-                      <div class="modal-body">
-
-                        <form class="form-horizontal" role="form">
-                          <div class="form-group">
-                            <label for="inputEmail1" class="col-lg-2 control-label">Email</label>
-                            <div class="col-lg-10">
-                              <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label for="inputPassword1" class="col-lg-2 control-label">Password</label>
-                            <div class="col-lg-10">
-                              <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="col-lg-offset-2 col-lg-10">
-                              <div class="checkbox">
-                                <label>
-                                                                  <input type="checkbox"> Remember me
-                                                              </label>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="col-lg-offset-2 col-lg-10">
-                              <button type="submit" class="btn btn-info">Sign in</button>
-                            </div>
-                          </div>
-                        </form>
-
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-                <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal-2" class="modal fade">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                        <h4 class="modal-title">Form Tittle</h4>
-                      </div>
-                      <div class="modal-body">
-                        <form class="form-inline" role="form">
-                          <div class="form-group">
-                            <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                            <input type="email" class="form-control sm-input" id="exampleInputEmail5" placeholder="Enter email">
-                          </div>
-                          <div class="form-group">
-                            <label class="sr-only" for="exampleInputPassword2">Password</label>
-                            <input type="password" class="form-control sm-input" id="exampleInputPassword5" placeholder="Password">
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                                                          <input type="checkbox"> Remember me
-                                                      </label>
-                          </div>
-                          <button type="submit" class="btn btn-success">Sign in</button>
-                        </form>
-
-                      </div>
-              </div>
-            </section>
-          </div>
-        </div>
-         Inline form-->
-      <!--  <div class="row">
-          <div class="col-lg-12">
-            <section class="panel">
-              <header class="panel-heading">
-                Inline form
-              </header>
-              <div class="panel-body">
-                <form class="form-inline" role="form">
-                  <div class="form-group">
-                    <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
-                  </div>
-                  <div class="form-group">
-                    <label class="sr-only" for="exampleInputPassword2">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
-                  </div>
-                  <div class="checkbox">
-                    <label>
-                                          <input type="checkbox"> Remember me
-                                      </label>
-                  </div>
-                  <button type="submit" class="btn btn-primary">Sign in</button>
-                </form>
-
-              </div>
-            </section>
-
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12">
-
-            <div class="row">
-              <div class="col-lg-6">
-                <section class="panel">
-                  <header class="panel-heading">
-                    Color Pickers & Date Pickers
-                  </header>
-                  <div class="panel-body">
-                    <form class="form-horizontal " action="#">
-                      date picker start
-
-                      <div class="form-group">
-                        <label class="control-label col-sm-4">Default Datepicker</label>
-                        <div class="col-sm-6">
-                          <input id="dp1" type="text" value="28-10-2013" size="16" class="form-control">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="control-label col-sm-4">Starts with years view</label>
-                        <div class="col-sm-6">
-
-
-                          <div class="input-append date" id="dpYears" data-date="18-06-2013" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-                            <input class="form-control" size="16" type="text" value="28-06-2013" readonly>
-                            <span class="add-on"><i class="icon-calendar"></i></span>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="control-label col-sm-4"> Date Ranges</label>
-                        <div class="col-sm-6">
-                          <div class="input-prepend">
-                            <input id="reservation" type="text" class=" form-control" />
-                          </div>
-                        </div>
-                      </div>
-                      date picker end
-
-                      color picker start
-                      <div class="form-group">
-                        <label class="control-label col-sm-4">full Name</label>
-
-                        <div class="col-sm-5">
-                          <input type="text" value="#CCCCCC" class="cp1 form-control">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="control-label col-sm-4">RGBA</label>
-
-                        <div class="col-sm-5">
-                          <input type="text" data-color-format="rgba" value="rgb(255,255,255,1)" class="cp2 form-control">
-                        </div>
-                      </div>
-
-                      color picker end
-
-                    </form>
-
-
-                  </div>
-                </section>
-                <section class="panel">
-                  <header class="panel-heading">
-                    Tags Input
-                  </header>
-                  <div class="panel-body">
-                    <input name="tagsinput" id="tagsinput" class="tagsinput" value="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal" />
-                  </div>
-                </section>
-              </div>
-              <div class="col-lg-6">
-                <section class="panel">
-                  <header class="panel-heading">
-                    Custom Checkbox & Radio
-                  </header>
-                  <div class="panel-body">
-                    <form action="#" method="get" accept-charset="utf-8">
-                      <div class="checkboxes">
-                        <label class="label_check" for="checkbox-01">
-                                                  <input name="sample-checkbox-01" id="checkbox-01" value="1" type="checkbox" checked /> I agree to the terms &#38; conditions.
-                                              </label>
-                        <label class="label_check" for="checkbox-02">
-                                              <input name="sample-checkbox-02" id="checkbox-02" value="1" type="checkbox" /> Please send me regular updates. </label>
-                        <label class="label_check" for="checkbox-03">
-                                              <input name="sample-checkbox-02" id="checkbox-03" value="1" type="checkbox" /> This is nice checkbox.</label>
-
-                      </div>
-                      <div class="radios">
-                        <label class="label_radio" for="radio-01">
-                                                  <input name="sample-radio" id="radio-01" value="1" type="radio" checked /> This is option A...
-                                              </label>
-                        <label class="label_radio" for="radio-02">
-                                                  <input name="sample-radio" id="radio-02" value="1" type="radio" /> and this is option B...
-                                              </label>
-                        <label class="label_radio" for="radio-03">
-                                                  <input name="sample-radio" id="radio-03" value="1" type="radio" /> or simply choose option C
-                                              </label>
-                      </div>
-                    </form>
-                  </div>
-
-                </section>
-
-                <section class="panel">
-                  <header class="panel-heading">
-                    Switch
-                  </header>
-                  <div class="panel-body">
-                    <div class="row m-bot15">
-                      <div class="col-sm-6 text-center">
-                        <input type="checkbox" checked="" data-toggle="switch" />
-                      </div>
-                      <div class="col-sm-6 text-center">
-                        <input type="checkbox" data-toggle="switch" />
-                      </div>
-                    </div>
-                    <div class="row m-bot15">
-                      <div class="col-sm-6 text-center">
-                        <div class="switch switch-square" data-on-label="<i class=' icon-ok'></i>" data-off-label="<i class='icon-remove'></i>">
-                          <input type="checkbox" />
-                        </div>
-                      </div>
-                      <div class="col-sm-6 text-center">
-                        <div class="switch switch-square" data-on-label="<i class=' icon-ok'></i>" data-off-label="<i class='icon-remove'></i>">
-                          <input type="checkbox" checked="" />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-6 text-center">
-                        <input type="checkbox" disabled data-toggle="switch" />
-                      </div>
-                      <div class="col-sm-6 text-center">
-                        <input type="checkbox" checked disabled data-toggle="switch" />
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
-
-              </div>
-            </div>
-
-            <div class="row">-->
-              <!-- Bootsrep Editor -->
-              <div class="col-lg-12">
-                <section class="panel">
-                  <header class="panel-heading">
-                    Write Something About You
-                  </header>
-                  <div class="panel-body">
-                    <div id="editor" class="btn-toolbar" data-role="editor-toolbar" data-target="#editor"></div>
-                  </div>
-                </section>
-              </div>
-              <!-- CKEditor 
-              <div class="col-lg-12">
-                <section class="panel">
-                  <header class="panel-heading">
-                    CKEditor
-                  </header>
-                  <div class="panel-body">
-                    <div class="form">
-                      <form action="#" class="form-horizontal">
-                        <div class="form-group">
-                          <label class="control-label col-sm-2">CKEditor</label>
-                          <div class="col-sm-10">
-                            <textarea class="form-control ckeditor" name="editor1" rows="6"></textarea>
-                          </div>-->
-    
-        <!-- Basic Forms & Horizontal Forms-->
-
-        <div class="row">
-          <div class="col-lg-6">
-            <section class="panel">                     
- <div class="form-group">
-                    <div class="col-lg-offset-2 col-lg-10">
-                      <div class="checkbox">
-                        <label>
-                        <input type="checkbox"> I agree that above details are true
-                      </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-lg-offset-2 col-lg-10">
-                      <button type="submit" class="btn btn-danger">Save</button>
-                    </div>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- page end-->
       </section>
-    </section>
-    <!--main content end-->
-    <div class="text-right">
-      <div class="credits">
-          <!--
-            All the links in the footer should remain intact.
-            You can delete the links only if you purchased the pro version.
-            Licensing information: https://bootstrapmade.com/license/
-            Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
-          -->
-         
-        </div>
     
+
+                 
+ 
+    
+    <div class="col-lg-12">
+      <section class="panel">
+        <!--Text editor..............................................................-->
+        <header class="panel-heading">
+          Write Something About You
+        </header>
+        <div class="panel-body">
+          <div id="editor" class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+          </div>
+        </div>
+          <!--End Text editor........................................................-->
+        <!--Check box................................................-->
+      </section>
     </div>
+    
+    <div class="row">
+      <div class="col-lg-6">
+      <section class="panel">                     
+        <div class="form-group">
+          <div class="col-lg-offset-2 col-lg-10">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> I agree that above details are true
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-offset-2 col-lg-10">
+            <button type="submit" class="btn btn-danger" name="edit_profile">Save</button>
+          </div>
+        </div>
+        </section>
+      </section>
+    </div>
+  </div> 
   </section>
+  <!-- page end-->
   <!-- container section end -->
+</form>
+
+
+
+
+
+
+
   <!-- javascripts -->
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -1008,81 +385,11 @@
   <!-- custome script for all page -->
   <script src="js/scripts.js"></script>
 
-<?php
-         // define variables and set to empty values
-         $genderErr = $fullnameErr = $phoneErr = $salaryErr = "";
-         $workexpErr = $addressErr = "";
-         $post1Err = $post2Err = $post3Err = $post4Err = "";
-         $postErr = $apartmentnoErr = $streetErr = $cityErr = "";
-         $gender = $fullname = $phone = $salary = "";
-         
-         $post1 = $post2 = $post3 = $post4 = "";
-         $post = $apartmentno = $street = $city = "";        
-         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if (empty($_POST["fullname"])) {
-               $fullnameErr = "Name is required";
-            }else {
-               $name = test_input($_POST["fullname"]);
-            }
-            
-            if (empty($_POST["post"]) or (empty($_POST["apartmentno"])) or (empty($_POST["street"])) or (empty($_POST["city"])) ) {
-               $addressErr = "address is required";
-            }else {
-               $apartmentno = test_input($_POST["apartmentno"]);
-               $post = test_input($_POST["post"]);
-               $street = test_input($_POST["street"]);
-               $city = test_input($_POST["city"]);
-               
-               
-            }
-            
-            if (empty($_POST["gender"])) {
-               $genderErr = "No Gender Selected";
-            }else {
-               $gender = test_input($_POST["gender"]);
-            }
-            
-            if (empty($_POST["phone"])) {
-               $phoneErr = "Enter a phone number";
-            }else {
-               $phone = test_input($_POST["phone"]);
-            }
-            
-            if (empty($_POST["salary"])) {
-               $salaryErr = "Salary is required to fill";
-            }else {
-               $salary = test_input($_POST["salary"]);
-            }
-         }
-         
-         function test_input($data) {
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data;
-         }
-         
-/* Attempt MySQL server connection. Assuming you are running MySQL
-server with default setting (user 'root' with no password) */
-$link = mysqli_connect("localhost", "root", "", "demo");
- 
-// Check connection
-if($link === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
- 
-// Attempt insert query execution
-$sql = "INSERT INTO persons (fullname, phone, salary) VALUES ('Peter', 'Parker', 'peterparker@mail.com')";
-if(mysqli_query(localhost, $sql)){
-    echo "Records inserted successfully.";
-} else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error(localhost);
-}
- 
-// Close connection
-mysqli_close(localhost);
-?>
-      
+  <p></P>
+  <div class="row">.</div>
+  <div class="row">.</div>
+  <div class="row">.</div>
+  <div class="row">.</div>
 </body>
 
 </html>
