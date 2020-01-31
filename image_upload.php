@@ -1,15 +1,6 @@
 
 <!--image upload-->
 <?php include 'server.php';?>
-
-<!DOCTYPE html>
-<div class="form-group">
-  <form action="" method="post" enctype="multipart/form-data">
-    <input type="file" name="file">
-    <input type="submit" name="submit">
-  </form>
-</div>
-<!--eng of image upload-->
 <?php
         if(isset($_POST['submit'])){
                 move_uploaded_file($_FILES['file']['tmp_name'],"pictures/".$_FILES['file']['name']);
