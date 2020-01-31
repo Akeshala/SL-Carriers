@@ -4,7 +4,7 @@
         if(isset($_POST['submit'])){
                 move_uploaded_file($_FILES['file']['tmp_name'],"pictures/".$_FILES['file']['name']);
                 $con = mysqli_connect("localhost","root","","registration");
-                $q = mysqli_query($con,"UPDATE * FROM usersall WHERE typeuser = 'Student' SET image = '".$_FILES['file']['name']."' WHERE username = '".$_SESSION['username']."'");
+                $q = mysqli_query($con,"UPDATE usersall SET image = '".$_FILES['file']['name']."' WHERE username = '".$_SESSION['username']."'");
         }
 ?>
  
