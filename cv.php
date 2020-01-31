@@ -1,10 +1,9 @@
-
 <?php include 'server.php';?>
 <?php
         if(isset($_POST['submit'])){
-                move_uploaded_file($_FILES['file']['tmp_name'],"pictures/".$_FILES['file']['name']);
+                move_uploaded_file($_FILES['file']['tmp_name'],"cv/".$_FILES['file']['name']);
                 $con = mysqli_connect("localhost","root","","registration");
-                $q = mysqli_query($con,"UPDATE usersall SET image = '".$_FILES['file']['name']."' WHERE username = '".$_SESSION['username']."'");
+                $q = mysqli_query($con,"UPDATE usersall SET cv = '".$_FILES['file']['name']."' WHERE username = '".$_SESSION['username']."'");
         }
 ?>
  
