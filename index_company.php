@@ -266,7 +266,7 @@ if (isset($_GET['logout'])) {
                                                             <p><span>Field 4 </span>: <?php echo $_SESSION['field3']; ?></p>
                                                         </div>
                                                         <div class="bio-row">
-                                                            <p><span>Work Experience </span>: <?php echo $_SESSION['workexperience']; ?></p>
+                                                            <p><span>Work Experience Expecting </span>: <?php echo $_SESSION['workexperience']; ?></p>
                                                         </div>
                                                     </div>
                                                 </div>
