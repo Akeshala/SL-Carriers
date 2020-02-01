@@ -134,8 +134,9 @@ if (isset($_POST['edit_profile'])) {
   $position4 = mysqli_real_escape_string($db, $_POST['position4']);
   $salary = mysqli_real_escape_string($db, $_POST['salary']);
   $workexperience = mysqli_real_escape_string($db, $_POST['workexperience']);
+  $content = mysqli_real_escape_string($db, $_POST['content']);
 
-  $query = "UPDATE usersall SET fullname='$fullname', apartmentnumber='$apartmentnumber', streetname='$streetname', cityname='$cityname', postalcode='$postalcode', gender='$gender', phone='$phone', field = '$field', position1='$position1', position2='$position2', position3='$position3', position4='$position4', salary='$salary', workexperience='$workexperience' WHERE username='" . $_SESSION['username'] . "'";
+  $query = "UPDATE usersall SET fullname='$fullname', apartmentnumber='$apartmentnumber', streetname='$streetname', cityname='$cityname', postalcode='$postalcode', gender='$gender', phone='$phone', field = '$field', position1='$position1', position2='$position2', position3='$position3', position4='$position4', salary='$salary', workexperience='$workexperience', content = '$content' WHERE username='" . $_SESSION['username'] . "'";
 
   //$query = "INSERT INTO usersall (fullname, apartmentnumber, streetname, cityname,postalcode,gender,phone,position1,position2,position3,position4,salary,workexperience) 
   //VALUES('$fullname', '$apartmentnumber', '$streetname', '$cityname','$postalcode','$gender','$phone','$position1','$position2','$position3','$position4','$salary','$workexperience')";
@@ -160,6 +161,7 @@ if (isset($_POST['edit_profile'])) {
   $_SESSION['position4'] = $position4;
   $_SESSION['salary'] = $salary;
   $_SESSION['workexperience'] = $workexperience;
+  $_SESSION['content'] = $content;
   $_SESSION['aboutyou'] = $aboutyou;
   $_SESSION['image'] = $image;
   //$_SESSION['email'] = $email;
