@@ -157,7 +157,7 @@ if (isset($_GET['logout'])) {
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
           <li class="active">
-            <a class="" href="index_company.php">
+            <a class="" href="index_comapany.php">
                           <i class="icon_house_alt"></i>
                           <span>Home</span>
                       </a>
@@ -180,12 +180,6 @@ if (isset($_GET['logout'])) {
             <span>Upload My Image</span>
           </a>
           </li>
-          <li class="active">
-          <a class="" href="search.php">
-            <i class='icon_book_alt'></i>
-            <span>Search For Applicants</span>
-          </a>
-          </li>
         </ul>
       </div>
     </aside>
@@ -203,17 +197,9 @@ if (isset($_GET['logout'])) {
           <div class="col-lg-12">
             <section class="panel">
               <header class="panel-heading">
-                 Company Form
-                 
-                                                                  
-                                        <select name="username1" id="username1">
-                                            <!--<option>Select</option>-->
-                                            <option value="C"><?php echo $_SESSION['username']; ?></option>
-                                        </select>                                    
-                                
-                         
+                Form                                                
               </header>
-              <!------company Form start........................................................-->
+              <!------Student Form start........................................................-->
               <div class="panel-body">
                   <!----Full name.................................................-->
                   <div class="form-group">
@@ -239,9 +225,9 @@ if (isset($_GET['logout'])) {
                       <input name="designation" type="text" class="form-control input-lg m-bot15" placeholder="Enter Your Designation">
                     </div>
                   </div>
-                  <!--Address..................................................-->
+                  <!--Company Address..................................................-->
                   <div class="form-group">
-                    <label class="col-sm-2 control-label">Company address</label>
+                    <label class="col-sm-2 control-label">Home address</label>
                     <div class="col-sm-10">
                       <input class="form-control input-lg m-bot15" name="apartmentnumber" type="text" placeholder="Apartment Number">
                       <input class="form-control input-lg m-bot15" name="streetname" type="text" placeholder="Street Name">
@@ -277,8 +263,7 @@ if (isset($_GET['logout'])) {
                       <input class="form-control input-lg m-bot15" name="field3" type="text" placeholder="field 3">
                       <input class="form-control input-lg m-bot15" name="field4" type="text" placeholder="field 4">
                     </div>
-                  </div>
-                                              
+                  </div>                           
               </div>
             </section>
             <section class="panel">
@@ -309,7 +294,7 @@ if (isset($_GET['logout'])) {
                       </div>
                     </div>
                   </div>
-                <!--end of company form...........................-->
+                <!--end of student form...........................-->
               </div>
             </section>
           </div>
@@ -320,7 +305,20 @@ if (isset($_GET['logout'])) {
                  
  
     
-    
+    <div class="col-lg-12">
+      <section class="panel">
+        <!--Text editor..............................................................-->
+        <header class="panel-heading">
+          Write Something About You
+        </header>
+        <div class="panel-body">
+          <div id="editor" class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+          </div>
+        </div>
+          <!--End Text editor........................................................-->
+        <!--Check box................................................-->
+      </section>
+    </div>
     
     <div class="row">
       <div class="col-lg-6">
@@ -336,7 +334,7 @@ if (isset($_GET['logout'])) {
         </div>
         <div class="form-group">
           <div class="col-lg-offset-2 col-lg-10">
-            <button type="submit" class="btn btn-danger" name="edit_profile_company">Save</button>
+            <button type="submit" class="btn btn-danger" name="edit_profile">Save</button>
           </div>
         </div>
         </section>
