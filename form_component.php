@@ -169,13 +169,13 @@ if (isset($_GET['logout'])) {
                       </a>
           </li>
           <li class="active">
-            <a class="" href="form_validation_new.html">
+            <a class="" href="form_validation_new.php">
               <i class='icon_shield_alt'></i>
                 <span>Security Settings</span>
             </a>
           </li>
           <li class="active">
-          <a class="" href="form_validation_new.html">
+          <a class="" href="image_upload.php">
             <i class='icon_camera_alt'></i>
             <span>Upload My Image</span>
           </a>
@@ -197,15 +197,7 @@ if (isset($_GET['logout'])) {
           <div class="col-lg-12">
             <section class="panel">
               <header class="panel-heading">
-                 Form
-                 
-                                                                  
-                                        <select name="username1" id="username1">
-                                            <!--<option>Select</option>-->
-                                            <option value="C"><?php echo $_SESSION['username']; ?></option>
-                                        </select>                                    
-                                
-                         
+                Form                                                
               </header>
               <!------Student Form start........................................................-->
               <div class="panel-body">
@@ -265,24 +257,8 @@ if (isset($_GET['logout'])) {
                   </div>                            
               </div>
             </section>
-            
             <section class="panel">
               <div class="panel-body">
-                <!--field--------------------------------->
-                <div class="form-group">
-                  <label class="control-label col-lg-2" for="field">Field</label>
-                  <div class="col-lg-10">
-                    <select class="form-control m-bot15" name="field">
-                     <option>ENTC</option>
-                     <option>CSE</option>
-                     <option>Electrical</option>  
-                     <option>IT</option>   
-                     <option>Chemical</option>  
-                     <option>Material</option>     
-                     <option>Civil</option>              
-                    </select>                    
-                  </div>
-                </div>
                 <!--Experience.........................-->
                   <div class="form-group">
                     <label class="control-label col-lg-2" for="WorkExp">Work Experience</label>
