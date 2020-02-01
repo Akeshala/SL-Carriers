@@ -22,6 +22,8 @@ if (isset($_GET['logout'])) {
   <meta name="author" content="GeeksLabs">
   <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
   <link rel="shortcut icon" href="img/favicon.png">
+  <meta charset="utf-8">
+  <script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script>
 
   <title>Form Component</title>
 
@@ -311,46 +313,55 @@ if (isset($_GET['logout'])) {
                  
  
     
-    <div class="col-lg-12">
+      <div class="col-lg-12">
       <section class="panel">
         <!--Text editor..............................................................-->
         <header class="panel-heading">
           Write Something About You
         </header>
-        <div class="panel-body">
-          <div id="editor" class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
-          </div>
-        </div>
+    <form action="[URL]" method="post">
+        <textarea name="content" id="editor">
+            &lt;p&gt;This is some sample content.&lt;/p&gt;
+        </textarea>
+        <p><input type="submit" value="Submit"></p>
+    </form>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
           <!--End Text editor........................................................-->
         <!--Check box................................................-->
+        
       </section>
     </div>
-    
-    <div class="row">
-      <div class="col-lg-6">
-      <section class="panel">                     
-        <div class="form-group">
-          <div class="col-lg-offset-2 col-lg-10">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox"> I agree that above details are true
-              </label>
-            </div>
-          </div>
+
+    <div class="col-lg-12">
+      <section class="panel">
+    <div class="form-group">
+      <div class="col-lg-offset-2 col-lg-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> I agree that above details are true
+          </label>
         </div>
-        <div class="form-group">
-          <div class="col-lg-offset-2 col-lg-10">
-            <button type="submit" class="btn btn-danger" name="edit_profile">Save</button>
-          </div>
-        </div>
-        </section>
-      </section>
+      </div>
     </div>
-  </div> 
-  </section>
+    <div class="form-group">
+      <div class="col-lg-offset-2 col-lg-10">
+        <button type="submit" class="btn btn-danger" name="edit_profile">Save</button>
+      </div>
+    </div>
+    </section>
+    </div>
+  
+    </section>
+  </form>
   <!-- page end-->
   <!-- container section end -->
-</form>
+
 
 
 
