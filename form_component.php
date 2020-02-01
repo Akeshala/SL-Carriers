@@ -265,8 +265,24 @@ if (isset($_GET['logout'])) {
                   </div>                            
               </div>
             </section>
+            
             <section class="panel">
               <div class="panel-body">
+                <!--field--------------------------------->
+                <div class="form-group">
+                  <label class="control-label col-lg-2" for="field">Field</label>
+                  <div class="col-lg-10">
+                    <select class="form-control m-bot15" name="field">
+                     <option>ENTC</option>
+                     <option>CSE</option>
+                     <option>Electrical</option>  
+                     <option>IT</option>   
+                     <option>Chemical</option>  
+                     <option>Material</option>     
+                     <option>Civil</option>              
+                    </select>                    
+                  </div>
+                </div>
                 <!--Experience.........................-->
                   <div class="form-group">
                     <label class="control-label col-lg-2" for="WorkExp">Work Experience</label>
