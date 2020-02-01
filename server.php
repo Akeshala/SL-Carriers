@@ -117,7 +117,7 @@ if (isset($_POST['login_user'])) {
 }
 
 
-///profile edit
+///student edit
 if (isset($_POST['edit_profile'])) {
   //$username= mysqli_real_escape_string($db, $_POST['username1']);
   $fullname = mysqli_real_escape_string($db, $_POST['fullname']);
@@ -127,6 +127,7 @@ if (isset($_POST['edit_profile'])) {
   $postalcode = mysqli_real_escape_string($db, $_POST['postalcode']);
   $gender = mysqli_real_escape_string($db, $_POST['gender']);
   $phone = mysqli_real_escape_string($db, $_POST['phone']);
+  $field = mysqli_real_escape_string($db, $_POST['field']);
   $position1 = mysqli_real_escape_string($db, $_POST['position1']);
   $position2 = mysqli_real_escape_string($db, $_POST['position2']);
   $position3 = mysqli_real_escape_string($db, $_POST['position3']);
@@ -134,7 +135,7 @@ if (isset($_POST['edit_profile'])) {
   $salary = mysqli_real_escape_string($db, $_POST['salary']);
   $workexperience = mysqli_real_escape_string($db, $_POST['workexperience']);
 
-  $query = "UPDATE usersall SET fullname='$fullname', apartmentnumber='$apartmentnumber', streetname='$streetname', cityname='$cityname', postalcode='$postalcode', gender='$gender', phone='$phone', position1='$position1', position2='$position2', position3='$position3', position4='$position4', salary='$salary', workexperience='$workexperience' WHERE username='" . $_SESSION['username'] . "'";
+  $query = "UPDATE usersall SET fullname='$fullname', apartmentnumber='$apartmentnumber', streetname='$streetname', cityname='$cityname', postalcode='$postalcode', gender='$gender', phone='$phone', field = '$field', position1='$position1', position2='$position2', position3='$position3', position4='$position4', salary='$salary', workexperience='$workexperience' WHERE username='" . $_SESSION['username'] . "'";
 
   //$query = "INSERT INTO usersall (fullname, apartmentnumber, streetname, cityname,postalcode,gender,phone,position1,position2,position3,position4,salary,workexperience) 
   //VALUES('$fullname', '$apartmentnumber', '$streetname', '$cityname','$postalcode','$gender','$phone','$position1','$position2','$position3','$position4','$salary','$workexperience')";
@@ -152,6 +153,7 @@ if (isset($_POST['edit_profile'])) {
   $_SESSION['postalcode'] = $postalcode;
   $_SESSION['gender'] = $gender;
   $_SESSION['phone'] = $phone;
+  $_SESSION['field'] = $field;
   $_SESSION['position1'] = $position1;
   $_SESSION['position2'] = $position2;
   $_SESSION['position3'] = $position3;
@@ -164,6 +166,54 @@ if (isset($_POST['edit_profile'])) {
   //$_SESSION['success'] = "You are now logged in";
   header('location: index.php');
 }
+// -------------------------company form-----------------------------------------------
+if (isset($_POST['edit_profile_company'])) {
+    //$username= mysqli_real_escape_string($db, $_POST['username1']);
+    $fullname = mysqli_real_escape_string($db, $_POST['fullname']);
+    $companyname = mysqli_real_escape_string($db, $_POST['companyname']);
+    $designation = mysqli_real_escape_string($db, $_POST['designation']);
+    $apartmentnumber = mysqli_real_escape_string($db, $_POST['apartmentnumber']);
+    $streetname = mysqli_real_escape_string($db, $_POST['streetname']);
+    $cityname = mysqli_real_escape_string($db, $_POST['cityname']);
+    $postalcode = mysqli_real_escape_string($db, $_POST['postalcode']);
+    $gender = mysqli_real_escape_string($db, $_POST['gender']);
+    $phone = mysqli_real_escape_string($db, $_POST['phone']);
+    $field1 = mysqli_real_escape_string($db, $_POST['field1']);
+    $field2 = mysqli_real_escape_string($db, $_POST['field2']);
+    $field3 = mysqli_real_escape_string($db, $_POST['field3']);
+    $field4 = mysqli_real_escape_string($db, $_POST['field4']);
+    $workexperience = mysqli_real_escape_string($db, $_POST['workexperience']);
+  
+    $query = "UPDATE usersall SET fullname='$fullname', companyname = '$companyname', designation = '$designation', apartmentnumber='$apartmentnumber', streetname='$streetname', cityname='$cityname', postalcode='$postalcode', gender='$gender', phone='$phone', field1='$field1', field2='$field2', field3='$field3', field4='$field4',  workexperience='$workexperience' WHERE username='" . $_SESSION['username'] . "'";
+  
+    //$query = "INSERT INTO usersall (fullname, apartmentnumber, streetname, cityname,postalcode,gender,phone,position1,position2,position3,position4,salary,workexperience) 
+    //VALUES('$fullname', '$apartmentnumber', '$streetname', '$cityname','$postalcode','$gender','$phone','$position1','$position2','$position3','$position4','$salary','$workexperience')";
+    mysqli_query($db, $query);
+  
+  
+    //$_SESSION['success'] = "You are now logged in";
+    //$_SESSION['email'] = $email;
+    //$_SESSION['username'] = $row['username'];
+    //$_SESSION['typeuser'] = $row['typeuser'];
+    $_SESSION['fullname'] = $fullname;
+    $_SESSION['companyname'] = $companyname;
+    $_SESSION['designation'] = $designation;
+    $_SESSION['apartmentnumber'] =  $apartmentnumber;
+    $_SESSION['streetname'] = $streetname;
+    $_SESSION['cityname'] = $cityname;
+    $_SESSION['postalcode'] = $postalcode;
+    $_SESSION['gender'] = $gender;
+    $_SESSION['phone'] = $phone;
+    $_SESSION['field1'] = $field1;
+    $_SESSION['field2'] = $field2;
+    $_SESSION['field3'] = $field3;
+    $_SESSION['field4'] = $field4;
+    $_SESSION['workexperience'] = $workexperience;
+    $_SESSION['image'] = $image;
+    //$_SESSION['email'] = $email;
+    //$_SESSION['success'] = "You are now logged in";
+    header('location: index.php');
+  }
 
 
 //validation

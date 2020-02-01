@@ -157,27 +157,33 @@ if (isset($_GET['logout'])) {
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
           <li class="active">
-            <a class="" href="index.php">
+            <a class="" href="index_company.php">
                           <i class="icon_house_alt"></i>
                           <span>Home</span>
                       </a>
           </li>
           <li class="active">
-            <a class="" href="form_component.php">
+            <a class="" href="form_component_company.php">
                           <i class="icon_document_alt"></i>
                           <span>Edit My Profile</span>
                       </a>
           </li>
           <li class="active">
-            <a class="" href="form_validation_new.html">
+            <a class="" href="form_validation_new_company.php">
               <i class='icon_shield_alt'></i>
                 <span>Security Settings</span>
             </a>
           </li>
           <li class="active">
-          <a class="" href="form_validation_new.html">
+          <a class="" href="image_upload.php">
             <i class='icon_camera_alt'></i>
             <span>Upload My Image</span>
+          </a>
+          </li>
+          <li class="active">
+          <a class="" href="search.php">
+            <i class='icon_book_alt'></i>
+            <span>Search For Applicants</span>
           </a>
           </li>
         </ul>
@@ -197,7 +203,7 @@ if (isset($_GET['logout'])) {
           <div class="col-lg-12">
             <section class="panel">
               <header class="panel-heading">
-                 Form
+                 Company Form
                  
                                                                   
                                         <select name="username1" id="username1">
@@ -207,7 +213,7 @@ if (isset($_GET['logout'])) {
                                 
                          
               </header>
-              <!------Student Form start........................................................-->
+              <!------company Form start........................................................-->
               <div class="panel-body">
                   <!----Full name.................................................-->
                   <div class="form-group">
@@ -217,9 +223,25 @@ if (isset($_GET['logout'])) {
                       <input name="fullname" type="text" class="form-control input-lg m-bot15" placeholder="Enter Your Full Name">
                     </div>
                   </div>
+                  <!--Company Name..................................................-->
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">Company Name</label>
+                    
+                    <div class="col-sm-10">
+                      <input name="companyname" type="text" class="form-control input-lg m-bot15" placeholder="Enter Your Company Name">
+                    </div>
+                  </div>
+                  <!--Post you are holding..................................................-->
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">Designation</label>
+                    
+                    <div class="col-sm-10">
+                      <input name="designation" type="text" class="form-control input-lg m-bot15" placeholder="Enter Your Designation">
+                    </div>
+                  </div>
                   <!--Address..................................................-->
                   <div class="form-group">
-                    <label class="col-sm-2 control-label">Home address</label>
+                    <label class="col-sm-2 control-label">Company address</label>
                     <div class="col-sm-10">
                       <input class="form-control input-lg m-bot15" name="apartmentnumber" type="text" placeholder="Apartment Number">
                       <input class="form-control input-lg m-bot15" name="streetname" type="text" placeholder="Street Name">
@@ -246,30 +268,24 @@ if (isset($_GET['logout'])) {
                       <input class="form-control input-lg m-bot15" name = "phone" type="tel" placeholder="Type Your Telephone Number" >
                     </div>
                   </div>
-                  <!--positions......................................-->
+                  <!--fields......................................-->
                   <div class="form-group">
-                    <label class="col-sm-2 control-label">Positions you are applying for</label>
+                    <label class="col-sm-2 control-label">Fields You Are Looking For</label>
                     <div class="col-sm-10">
-                      <input class="form-control input-lg m-bot15" name="position1"  type="text" placeholder="Position 1">
-                      <input class="form-control input-lg m-bot15" name="position2" type="text" placeholder="Position 2">
-                      <input class="form-control input-lg m-bot15" name="position3" type="text" placeholder="Position 3">
-                      <input class="form-control input-lg m-bot15" name="position4" type="text" placeholder="Position 4">
+                      <input class="form-control input-lg m-bot15" name="field1"  type="text" placeholder="field 1">
+                      <input class="form-control input-lg m-bot15" name="field2" type="text" placeholder="field 2">
+                      <input class="form-control input-lg m-bot15" name="field3" type="text" placeholder="field 3">
+                      <input class="form-control input-lg m-bot15" name="field4" type="text" placeholder="field 4">
                     </div>
                   </div>
-                  <!--Salary..............................................-->
-                  <div class="form-group">
-                    <label class="col-sm-2 control-label">Salary Requirement</label>
-                    <div class="col-sm-10">
-                      <input class="form-control input-lg m-bot15" name="salary" type="number" placeholder="Type Expected Salary - Rs/=">
-                    </div>
-                  </div>                            
+                                              
               </div>
             </section>
             <section class="panel">
               <div class="panel-body">
                 <!--Experience.........................-->
                   <div class="form-group">
-                    <label class="control-label col-lg-2" for="WorkExp">Work Experience</label>
+                    <label class="control-label col-lg-2" for="WorkExp">Work Experience You Looking For</label>
                     <div class="col-lg-10">
                       <div class="checkbox">
                         <label>
@@ -293,7 +309,7 @@ if (isset($_GET['logout'])) {
                       </div>
                     </div>
                   </div>
-                <!--end of student form...........................-->
+                <!--end of company form...........................-->
               </div>
             </section>
           </div>
@@ -304,20 +320,7 @@ if (isset($_GET['logout'])) {
                  
  
     
-    <div class="col-lg-12">
-      <section class="panel">
-        <!--Text editor..............................................................-->
-        <header class="panel-heading">
-          Write Something About You
-        </header>
-        <div class="panel-body">
-          <div id="editor" class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
-          </div>
-        </div>
-          <!--End Text editor........................................................-->
-        <!--Check box................................................-->
-      </section>
-    </div>
+    
     
     <div class="row">
       <div class="col-lg-6">
@@ -333,7 +336,7 @@ if (isset($_GET['logout'])) {
         </div>
         <div class="form-group">
           <div class="col-lg-offset-2 col-lg-10">
-            <button type="submit" class="btn btn-danger" name="edit_profile">Save</button>
+            <button type="submit" class="btn btn-danger" name="edit_profile_company">Save</button>
           </div>
         </div>
         </section>
