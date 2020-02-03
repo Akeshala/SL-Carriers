@@ -12,7 +12,7 @@
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>SL Carriers Registration</title>
+    <title><p>SLCAREERS</P> Registration</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -35,7 +35,7 @@
             <div class="card card-1">
                 <div class="card-heading"></div>
                 <div class="card-body">
-                    <h2 class="title">Register with SL Carriers</h2>
+                    <h2 class="title"><p>Register with <span style="color: red;">SL</span><span style="color: blue;">CAREERS</span><p></h2>
                     <form method="POST" action="register.php">
                         <?php include('errors.php'); ?>
                         <div class="input-group">
@@ -51,10 +51,10 @@
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
                                         <select name="typeuser" id="typeuser">
-                                            <option disabled="disabled" selected="selected" value="0">User Type</option>
+                                            <option selected="selected" value="">User Type</option>
                                             <!--<option>Select</option>-->
-                                            <option value="C">Company</option>
-                                            <option value="S">Student</option>
+                                            <option value="Company">Company</option>
+                                            <option value="Student">Student</option>
                                         </select>
                                         <div class="select-dropdown"></div>
                                     </div>
@@ -70,8 +70,8 @@
                         <div class="p-t-20">
                             <button class="btn btn--radius btn--green" type="submit" name="reg_user">Submit</button>
                         </div>
-                        <p>
-                            Already a member? <a href="login.php">Sign in</a>
+                        <p><br>
+                            Already a member? <a href="index.php">Sign in</a>
                         </p>
                     </form>
                 </div>

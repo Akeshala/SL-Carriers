@@ -49,7 +49,7 @@ if (isset($_GET['logout'])) {
       </div>
 
       <!--logo start-->
-      <a href="index_student.php" class="logo">SL<span class="lite">Careers</span></a>
+      <a href="index_company.html" class="logo">SL<span class="lite">Careers</span></a>
       <!--logo end-->
 
       <div class="top-nav notification-row">
@@ -133,7 +133,7 @@ if (isset($_GET['logout'])) {
               <ul class="dropdown-menu extended logout">
                 <div class="log-arrow-up"></div>
                 <li>
-                  <a href="index_student.php?logout='1'"><i class="icon_key_alt"></i> Log Out</a>
+                  <a href="index_company.php?logout='1'"><i class="icon_key_alt"></i> Log Out</a>
                 </li>
 
               </ul>
@@ -151,33 +151,33 @@ if (isset($_GET['logout'])) {
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
           <li class="active">
-            <a class="" href="index_student.php">
+            <a class="" href="index_company.php">
               <i class="icon_house_alt"></i>
               <span>Home</span>
             </a>
           </li>
           <li class="active">
-            <a class="" href="form_component.php">
+            <a class="" href="form_component_company.php">
               <i class="icon_document_alt"></i>
               <span>Edit My Profile</span>
             </a>
           </li>
           <li class="active">
-            <a class="" href="Form_validation_new.php">
+            <a class="" href="Form_validation_new_company.php">
               <i class='icon_shield_alt'></i>
               <span>Account Settings</span>
             </a>
           </li>
           <li class="active">
-            <a class="" href="image_upload.php">
+            <a class="" href="image_upload_company.php">
               <i class='icon_camera_alt'></i>
               <span>Upload My Image</span>
             </a>
           </li>
           <li class="active">
-            <a class="" href="cv.php">
-              <i class='icon_id'></i>
-              <span>Upload My CV</span>
+            <a class="" href="search.php">
+              <i class='icon_search'></i>
+              <span>Search Applicants</span>
             </a>
           </li>
 
@@ -207,7 +207,7 @@ if (isset($_GET['logout'])) {
             </header>
             <div class="panel-body">
               <div class="form">
-                <form class="form-validate form-horizontal" id="feedback_form" method="POST" action="">
+                <form class="form-validate form-horizontal" id="feedback_form" method="POST" action="Form_validation_new_company.php">
                   <div class="form-group ">
                     <label for="cemail" class="control-label col-lg-2">E-Mail <span class="required">*</span></label>
                     <div class="col-lg-10">
@@ -248,7 +248,7 @@ if (isset($_GET['logout'])) {
             </header>
             <div class="panel-body">
               <div class="form">
-                <form class="form-validate form-horizontal" id="feedback_form" method="POST" action="">
+                <form class="form-validate form-horizontal" id="feedback_form" method="POST" action="Form_validation_new_company.php">
                   <div class="form-group ">
                     <label for="cemail" class="control-label col-lg-2">E-Mail <span class="required">*</span></label>
                     <div class="col-lg-10">
@@ -290,20 +290,16 @@ if (isset($_GET['logout'])) {
             </header>
             <div class="panel-body">
               <div class="form">
-                <form class="form-validate form-horizontal " id="register_form" method="POST" action="Form_validation_new.php">
+                <form class="form-validate form-horizontal " id="register_form" method="POST" action="Form_validation_new_company.php">
                   <div class="form-group ">
-
-
                     <label for="username" class="control-label col-lg-2">Username <span class="required">*</span></label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="username" name="username" type="text" />
+                      <input class="form-control " id="username" name="username" value='<?php echo $_SESSION['username']; ?>' type="text" />
                     </div>
                   </div>
-
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
-                      <button class="btn btn-primary" type="submit" name="changeusername">Save</button>
-
+                      <button class="btn btn-primary" type="submit" name="changeusernamecompany">Save</button>
                     </div>
                   </div>
                 </form>
@@ -315,27 +311,22 @@ if (isset($_GET['logout'])) {
 
       <div class="row">
         <div class="col-lg-12">
-
           <section class="panel">
             <header class="panel-heading">
               Change Your Username
             </header>
             <div class="panel-body">
               <div class="form">
-                <form class="form-validate form-horizontal " id="register_form" method="POST" action="Form_validation_new.php">
+                <form class="form-validate form-horizontal " id="register_form" method="POST" action="Form_validation_new_company.php">
                   <div class="form-group ">
-
-
                     <label for="username" class="control-label col-lg-2">Username <span class="required">*</span></label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="username" value='<?php echo $_SESSION['username']; ?>' name="username" type="text" />
+                      <input class="form-control " id="username" name="username" value='<?php echo $_SESSION['username']; ?>' type="text" />
                     </div>
                   </div>
-
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
-                      <button class="btn btn-primary" type="submit" name="changeusername">Save</button>
-
+                      <button class="btn btn-primary" type="submit" name="changeusernamecompany">Save</button>
                     </div>
                   </div>
                 </form>
@@ -344,6 +335,7 @@ if (isset($_GET['logout'])) {
           </section>
         </div>
       </div>
+
 
       <!--password-->
 
@@ -355,24 +347,22 @@ if (isset($_GET['logout'])) {
             </header>
             <div class="panel-body">
               <div class="form">
-                <form class="form-validate form-horizontal " id="register_form" method="POST" action="Form_validation_new.php">
+                <form class="form-validate form-horizontal " id="register_form" method="POST" action="Form_validation_new_company.php">
                   <div class="form-group ">
                     <label for="password" class="control-label col-lg-2">Password <span class="required">*</span></label>
                     <div class="col-lg-10">
                       <input class="form-control " id="password" name="password" type="password" />
                     </div>
                   </div>
-
                   <div class="form-group ">
                     <label for="confirm_password" class="control-label col-lg-2">Confirm Password <span class="required">*</span></label>
                     <div class="col-lg-10">
                       <input class="form-control " id="confirm_password" name="confirm_password" type="password" />
                     </div>
                   </div>
-
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
-                      <button class="btn btn-primary" type="submit" name="changepassword">Save</button>
+                      <button class="btn btn-primary" type="submit" name="changepasswordcompany">Save</button>
                     </div>
                   </div>
                 </form>
@@ -387,7 +377,6 @@ if (isset($_GET['logout'])) {
     </section>
   </section>
   <!--main content end-->
-  </section>
   <!-- container section end -->
   <!-- javascripts -->
   <script src="js/jquery.js"></script>
