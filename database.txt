@@ -1,0 +1,27 @@
+CREATE TABLE `usersall` (
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `username` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `typeuser` varchar(100) NOT NULL,
+  `fullname` varchar(100) NOT NULL,
+  `apartmentnumber` varchar(100) NOT NULL,
+`field` varchar(100) NOT NULL,
+    `streetname` varchar(100) NOT NULL,
+    `cityname` varchar(100) NOT NULL,
+    `postalcode` varchar(100) NOT NULL,
+    `gender` varchar(100) NOT NULL,
+    `phone` varchar(100) NOT NULL,
+    `position1` varchar(100) NOT NULL,
+    `position2` varchar(100) NOT NULL,
+    `position3` varchar(100) NOT NULL,
+    `position4` varchar(100) NOT NULL,
+    `salary` varchar(100) NOT NULL,
+    `workexperience` varchar(100) NOT NULL,
+    `image` varchar(200) NOT NULL,
+    `cv` varchar(100) NOT NULL,
+`companyname` varchar(100) NOT NULL,
+`designation` varchar(100) NOT NULL
+
+    
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
