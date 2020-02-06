@@ -121,7 +121,7 @@ if (isset($_GET['logout'])) {
                             <?php if (isset($_SESSION['email'])) : ?>
                                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                     <span class="profile-ava">
-                                        <img alt="" src="img/avatar1_small.jpg">
+                                        <img alt="" src="pictures/<?php echo $_SESSION['username']; ?>">
                                     </span>
                                     <span class="username"><?php echo $_SESSION['username']; ?></span>
                                     <b class="caret"></b>
