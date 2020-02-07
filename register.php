@@ -1,5 +1,4 @@
 <?php include('server.php') ?>
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -12,7 +11,7 @@
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title><p>SLCAREERS</P> Registration</title>
+    <title>SLCAREERS Registration</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -35,7 +34,10 @@
             <div class="card card-1">
                 <div class="card-heading"></div>
                 <div class="card-body">
-                    <h2 class="title"><p>Register with <span style="color: red;">SL</span><span style="color: blue;">CAREERS</span><p></h2>
+                    <h2 class="title">
+                        <p>Register with <span style="color: red;">SL</span><span style="color: blue;">CAREERS</span>
+                            <p>
+                    </h2>
                     <form method="POST" action="register.php">
                         <?php include('errors.php'); ?>
                         <div class="input-group">

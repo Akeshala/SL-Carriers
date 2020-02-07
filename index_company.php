@@ -64,7 +64,7 @@ if (isset($_GET['logout'])) {
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <span class="photo"><img alt="avatar" src="./img/avatar-mini.jpg"></span>
+                                        <span class="photo"><img alt="avatar" width="50" height="40" src="./img/avatar-mini.jpg"></span>
                                         <span class="subject">
                                             <span class="from">Greg Martin</span>
                                             <span class="time">1 min</span>
@@ -76,7 +76,7 @@ if (isset($_GET['logout'])) {
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <span class="photo"><img alt="avatar" src="./img/avatar-mini2.jpg"></span>
+                                        <span class="photo"><img alt="avatar" width="200" height="40" src="./img/avatar-mini2.jpg"></span>
                                         <span class="subject">
                                             <span class="from">Bob Mckenzie</span>
                                             <span class="time">5 mins</span>
@@ -121,7 +121,7 @@ if (isset($_GET['logout'])) {
                             <?php if (isset($_SESSION['email'])) : ?>
                                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                     <span class="profile-ava">
-                                        <img alt="" src="pictures/<?php echo $_SESSION['username']; ?>">
+                                        <img alt="" width="35" height="35" src="pictures/<?php echo $_SESSION['username']; ?>">
                                     </span>
                                     <span class="username"><?php echo $_SESSION['username']; ?></span>
                                     <b class="caret"></b>
@@ -196,7 +196,7 @@ if (isset($_GET['logout'])) {
                                     <div class="col-lg-2 col-sm-2">
                                         <h4><strong><?php echo $_SESSION['username']; ?></strong></h4>
                                         <div class="follow-ava">
-                                            <img src="img/profile-widget-avatar.jpg" alt="">
+                                        <img alt="" width="200" height="200" src="pictures/<?php echo $_SESSION['username']; ?>">
                                         </div>
 
                                     </div>
